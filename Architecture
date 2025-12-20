@@ -4,7 +4,9 @@ Data Block:
       - All the data stored in blocks
       - Smallest unit of Database Storage.
       - A block can have 2KB to 32 KB [8 KB DEFAULT]
-
+      - a BLOCK stores row data or index data
+      - block header includes
+            - 
 
 PGA:
   Memory Area that is dedicated to single user. Every user has its own PGA.
