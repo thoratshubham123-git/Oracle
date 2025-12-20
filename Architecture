@@ -12,5 +12,15 @@ A.] Shared Pool:
             - it imporves performance of query which is same used priviously.
     4>Library cache:
             - Container and organizer of shared SQL area.
+
+B] Buffer cache:
+            - stores data blocks
+
+c] Redo Log Buffer:
+      - 
+D] Java Pool:
+
+F] Streams Pool:
+
     
       
