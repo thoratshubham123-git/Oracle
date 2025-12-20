@@ -19,7 +19,7 @@ Data Block:
 
 
 PGA:
-   Memory Area that is dedicated to single user. Every user has its own PGA.
+   Memory Area that is dedicated to single user. Every user has its own PGA. Assign ore size of PGA increases performance
 - consists below areas.
       1> Session Area
             - Stores session information for each user
@@ -30,8 +30,9 @@ PGA:
             - runtime area
                   - execution state
       3>Cursor Area
+            - stores information about cursors
       4>SQL Work Area
-            - sort area
+            - sort area  ==> group by, order by  results
             - Hash Join Area
             - Bitmap merge area
             - Bitmap Create Area
