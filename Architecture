@@ -6,7 +6,10 @@ Data Block:
       - A block can have 2KB to 32 KB [8 KB DEFAULT]
       - a BLOCK stores row data or index data
       - block header includes
-            - 
+            - bLOCK TYPE information
+            - Table information
+            - Row directory
+      ==> We can use PCTFREE and PCTUSE parameters to specify the space size in blocks.
 
 PGA:
   Memory Area that is dedicated to single user. Every user has its own PGA.
