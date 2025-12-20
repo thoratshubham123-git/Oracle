@@ -22,9 +22,13 @@ PGA:
    Memory Area that is dedicated to single user. Every user has its own PGA.
 - consists below areas.
       1> Session Area
+            - Stores session information for each user
+            - Stores session variable, login information, session status, etc.
       2> Private SQL Area
             - presistent area
+                  - stores the bind variables used in cursor release wen cursor is closed
             - runtime area
+                  - execution state
       3>Cursor Area
       4>SQL Work Area
             - sort area
