@@ -10,6 +10,13 @@ Data Block:
             - Table information
             - Row directory
       ==> We can use PCTFREE and PCTUSE parameters to specify the space size in blocks.
+            - row overhead
+            - number of columns
+            - cluster key id
+            - ROWID if chained row pieces
+            - column length 
+            - column value
+
 
 PGA:
   Memory Area that is dedicated to single user. Every user has its own PGA.
