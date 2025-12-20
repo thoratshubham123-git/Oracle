@@ -19,7 +19,18 @@ Data Block:
 
 
 PGA:
-  Memory Area that is dedicated to single user. Every user has its own PGA.
+   Memory Area that is dedicated to single user. Every user has its own PGA.
+- consists below areas.
+      1> Session Area
+      2> Private SQL Area
+            - presistent area
+            - runtime area
+      3>Cursor Area
+      4>SQL Work Area
+            - sort area
+            - Hash Join Area
+            - Bitmap merge area
+            - Bitmap Create Area
 
 A.] Shared Pool:
     1> Shared SQL Area :
