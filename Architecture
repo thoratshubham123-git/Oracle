@@ -5,3 +5,9 @@ A.] Shared Pool:
     1> Shared SQL Area :
             - Stores execution plan.
             - if same query excuted same execution plan used.
+    2> Data dictionary cache:
+            - stores metadata of databases
+    3> result cache:
+            - stores results executed by query 
+            - it imporves performance of query which is same used priviously.
+      
