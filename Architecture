@@ -1,0 +1,7 @@
+PGA:
+  Memory Area that is dedicated to single user. Every user has its own PGA.
+
+A.] Shared Pool:
+    1> Shared SQL Area :
+            - Stores execution plan.
+            - if same query excuted same execution plan used.
