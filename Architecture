@@ -10,4 +10,7 @@ A.] Shared Pool:
     3> result cache:
             - stores results executed by query 
             - it imporves performance of query which is same used priviously.
+    4>Library cache:
+            - Container and organizer of shared SQL area.
+    
       
