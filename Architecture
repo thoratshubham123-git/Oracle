@@ -56,7 +56,12 @@ A.] Shared Pool:
             - stores procedures, packages and control strucutures
 
 B] Buffer cache:
-            - stores data blocks
+            - stores data blocks read from disk
+            - Largest memory area of SGA
+            - Maintained with complex algorithm (LRU MOST recently used)
+            - Reading block from disk handled by server process
+            - changed blocks by DML called dirty blocks
+            - stores index data too
 
 c] Redo Log Buffer:
       - 
