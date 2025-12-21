@@ -42,12 +42,18 @@ A.] Shared Pool:
             - Stores execution plan.
             - if same query excuted same execution plan used.
     2> Data dictionary cache:
-            - stores metadata of databases
+            - stores metadata of databases ( names of objects)
+            - stores defination of database objects and their permissions
+            - 
     3> result cache:
-            - stores results executed by query 
+            - stores results executed  query 
             - it imporves performance of query which is same used priviously.
+            - store results of commanly used queries
+            - stores results of functions
     4>Library cache:
             - Container and organizer of shared SQL area.
+            - stores execution plans
+            - stores procedures, packages and control strucutures
 
 B] Buffer cache:
             - stores data blocks
