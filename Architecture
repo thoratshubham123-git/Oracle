@@ -114,3 +114,16 @@ AMM ( Automatic memory management):
       - 
     
       
+Storage architecture:
+--------------------
+      storage = disks
+      control file  - stores physical structure informationof the database.
+      Data files - stores data (tables, procedures application data)
+      Online redo log file - Stores redo log entries
+      Archived redo log files - copy of online redo log files
+      Backup files  - Stores exact copy of data fies for recovery
+      Parameter files - Stores the configuration data of the database instance
+      Password file - Stores the passwrods of the admin users (sysdba, sysoper, sysasm)
+      Alert log - Stores log massages and errors occured in the database
+      trace files - error trace info of process
+      
