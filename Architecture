@@ -64,10 +64,27 @@ B] Buffer cache:
             - stores index data too
 
 c] Redo Log Buffer:
-      - 
+      - Handles data loss
+      - Redo log rentry created when insert,update, delete, create, alter drop occurs
+      - Redo log entries has the changes made to the database
+      - They are used for recovery operations
+      - redo log entries stored in redo log buffer
+      - LGWR --> every three seconds, when it full, commmit
+      - Circular buffer
+      - rollback is not done with redo log data
+
+
 D] Java Pool:
 
 F] Streams Pool:
 
+
+
+
+UNDO:
+----
+    - The original data stored into the memory (undo tablespace is called undo data)
+    - Another copy of data is stored in the buffer cache for modifications
+    - 
     
       
