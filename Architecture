@@ -127,3 +127,12 @@ Storage architecture:
       Alert log - Stores log massages and errors occured in the database
       trace files - error trace info of process
       
+Logical Structure:
+-----------------
+      blocks - smallest unit of storage (2KB TO 32KB)
+      Extends - Combination of serveral consucative data blocks user for string specific type of info
+      Segments - Combination of extends ( tables, indexces etc)
+      Tablespace -  combination of many segments. Used for grouping the related data in one container
+            Temporary tablespace - stores the temporary data of  a session
+            Permanant tablespace - stores persistent schema objects
+            
