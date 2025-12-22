@@ -85,6 +85,16 @@ UNDO:
 ----
     - The original data stored into the memory (undo tablespace is called undo data)
     - Another copy of data is stored in the buffer cache for modifications
-    - 
+    - Undo data not modified because.
+      1. Used for rollbac operations
+      2. Used for providing read consistency
+      3. providing flashback feature
+
+BLOCKS > eXTENDS > SEGMENTS > TABLESPACE
+
+
+Question >  How DML Processed and comitted?
+----------
+
     
       
