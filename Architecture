@@ -95,6 +95,22 @@ BLOCKS > eXTENDS > SEGMENTS > TABLESPACE
 
 Question >  How DML Processed and comitted?
 ----------
+When we run DML code on server:
+      1. Checks the sharede SQL Area for simillar statements to use
+      2. Checks data dictionary cache and check query is valid
+      3. Checks buffer cache and undo segment for the related data
+      4. locks the related blocks to others
+      5. Makes the change to the blocks in buffer cache  (dirty buffer)
+      6. The changes are applied to redo log buffer before buffer cache 
+      7. Server returns feedback for the change
+      8. When users commit:
+            a. Server creates commit record with SCN
+            b. the LGwr process writes redo log entries from redo log buffer to redo log file
+            c. DBwr writes dirty blocks to the disk and unlock the block
+            d. server returns feedback about transaction completed.
 
+
+AMM ( Automatic memory management):
+      - 
     
       
