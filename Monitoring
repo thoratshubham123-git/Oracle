@@ -1,1 +1,36 @@
+Tablespace Utilization:
 
+SELECT 
+ df.tablespace_name, 
+ df.file_id, 
+ df.file_name, 
+ ROUND(df.bytes / POWER(1024, 3), 2) AS current_size_gb, 
+ ROUND(df.user_bytes / POWER(1024, 3), 2) AS usable_size_gb, 
+ df.autoextensible AS autoextend, 
+ ROUND( 
+ df.increment_by * ts.block_size / POWER(1024, 3), 4 
+ ) AS next_gb, 
+ ROUND(df.maxbytes / POWER(1024, 3), 2) AS max_size_gb, 
+ ROUND( 
+ GREATEST(df.maxbytes - df.bytes, 0) / POWER(1024, 3), 2 
+ ) AS remaining_growth_gb, 
+ ROUND( 
+ NVL(fs.free_bytes, 0) / POWER(1024, 3), 2 
+ ) AS free_gb, 
+ ROUND( 
+ (df.bytes - NVL(fs.free_bytes, 0)) 
+ / NULLIF(df.bytes, 0) * 100, 2 
+ ) AS used_pct, 
+ df.status, 
+ df.online_status 
+FROM dba_data_files df 
+JOIN dba_tablespaces ts 
+ ON ts.tablespace_name = df.tablespace_name 
+LEFT JOIN ( 
+ SELECT file_id, SUM(bytes) AS free_bytes 
+ FROM dba_free_space 
+ GROUP BY file_id 
+) fs 
+ ON fs.file_id = df.file_id 
+WHERE df.tablespace_name = UPPER('&tablespace_name') 
+ORDER BY df.file_id;
